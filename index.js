@@ -1,11 +1,11 @@
 const fp = require('fastify-plugin')
-const {inject} = require('./inject');
+const {requireAndInject} = require('./inject');
 
 module.exports = fp(function (fastify, opts, next) {
     const globs = Array.isArray(opts.paths) ? opts.paths : (typeof opts.paths === 'string' ? opts.paths : []);
     const instanceName = opts.name || "fastify";
     const othersToInject = opts.inject || {};
-    inject(globs, {
+    requireAndInject(globs, {
         [instanceName]: fastify,
         ...othersToInject
     });
