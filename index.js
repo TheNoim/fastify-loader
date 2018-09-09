@@ -12,6 +12,6 @@ module.exports = fp(function (fastify, opts, next) {
     requireAndInject(globs, {
         [instanceName]: fastify,
         ...othersToInject
-    });
+    }, module.parent.filename);
     next()
 }, { fastify: '>=1.0.0' });

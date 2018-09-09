@@ -9,10 +9,12 @@ const debug = require('debug')('inject');
  * @param {String[]} globs
  * @param {Object<String, Object>} toInject
  */
-function inject(globs, toInject) {
+function inject(globs, toInject, parent) {
+    debug(`Parent filename: ${parent}`);
+
     const paths = fg.sync(globs, {
-        cwd: path.dirname(module.parent.filename)
-    }).map(p => path.join(path.dirname(module.parent.filename), p));
+        cwd: path.dirname(parent)
+    }).map(p => path.join(path.dirname(parent), p));
 
     debug(`Transformed Globs: ${paths}`);
 
