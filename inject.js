@@ -19,23 +19,36 @@ Module.prototype._compile = function (content, filename) {
     return originalCompile.call(this, content, filename);
 };
 
-function inject(globs, name, obj) {
+/**
+ *
+ * @param {String[]} globs
+ * @param {Object<String, Object>} toInject
+ */
+function inject(globs, toInject) {
     const paths = fg.sync(globs, {
         cwd: path.dirname(module.parent.filename)
     }).map(p => path.join(path.dirname(module.parent.filename), p));
 
-    const id = nanoid(32);
-    const pathVarName = nanoid(32);
+    let objcIds = {};
+    for (let varname in toInject) {
+        if (!toInject.hasOwnProperty(varname)) continue;
+        objcIds[varname] = nanoid(32);
+        exportThis[objcIds[varname]] = toInject[varname];
+        module.exports = exportThis;
+    }
 
-    exportThis[id] = obj;
-    module.exports = exportThis;
+    const pathVarName = nanoid(32);
 
     paths.map(p => {
         hooks[p] = `
         global['${pathVarName}'] = require('path');
-        var ${name} = require(global['${pathVarName}'].relative(global['${pathVarName}'].join(__dirname, __filename), '${path.join(__dirname, __filename)}'))['${id}'];
-        delete global['${pathVarName}'];
         `;
+        for (let varname in toInject) {
+            if (!toInject.hasOwnProperty(varname)) continue;
+            hooks[p] += `var ${varname} = require(global['${pathVarName}'].relative(global['${pathVarName}'].join(__dirname, __filename), '${path.join(__dirname, __filename)}'))['${objcIds[varname]}'];
+            `;
+        }
+        hooks[p] += `delete global['${pathVarName}'];`
         require(p);
     });
 }

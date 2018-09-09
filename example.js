@@ -2,7 +2,10 @@ const fastify = require('fastify')();
 
 // Just register the plugin and add glob array which files to loud
 fastify.register(require('./index'), {
-    paths: ['./routes/**/*.js']
+    paths: ['./routes/**/*.js'],
+    inject: {
+        test: 1337
+    }
 });
 
 fastify.listen(1337, err => {

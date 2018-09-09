@@ -37,7 +37,7 @@ fastify.get('/api/hello', async () => {
 const fastify = require('fastify')();
 
 // Just register the plugin and add glob array which files to loud
-fastify.register(require('./index'), {
+fastify.register(require('fastify-loader'), {
     paths: ['./api/**/*.js'], // A glob array
     name: "fastify" // [Optional] if you want to do something like this: YOURNAMEHERE.get('/api/test')
 });
@@ -87,6 +87,17 @@ fastify.get('/api/hello', async () => {
 #### Do tests exist?
 
 Yes. You can run `yarn test` or `npm run test` after you installed the dependencies.
+
+#### Inject more than just fastify
+
+```javascript
+fastify.register(require('fastify-loader'), {
+    paths: ['./api/**/*.js'], // A glob array
+    inject: {
+        pi: 1.14 // pi is now available as var in each js file in ./api
+    }
+});
+```
 
 #### License
 
