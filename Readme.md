@@ -7,7 +7,7 @@ _The route loader for the cool kids!_
 [![GitHub package version](https://img.shields.io/github/package-json/v/TheNoim/fastify-loader.svg?style=for-the-badge)](https://github.com/TheNoim/fastify-loader)
 [![NPM Link](https://img.shields.io/badge/npm-fastify--loader-red.svg?style=for-the-badge)](https://www.npmjs.com/package/fastify-loader)
 
-Do you also an easy way to load routes for fastify? YEAH me too! This is why I made this module.
+Do you also want an easy way to load routes for fastify? YEAH me too! This is why I made this module.
 
 `fastify-loader` makes it easy to load routes from a directory.
 
