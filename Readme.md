@@ -60,13 +60,7 @@ npm i fastify-loader --save
 
 #### How does this work?
 
-I used [this post](https://blog.sqreen.io/one-easy-way-to-inject-malicious-code-in-any-node-js-application/) by [Vladimir](https://blog.sqreen.io/author/vladimir/) to hack Module.prototype._compile to append the fastify instance before the file gets loaded.
-
-This is why I want to thank Vladimir.
-
-#### Does this affect any other module?
-
-No, only files matched by the glob are affected. 
+It uses [vm2](https://github.com/patriksimek/vm2) to inject the fastify instance and other vars into the scope of each file.
 
 #### WebStorm/{INSERT OTHER IDE HERE} says that fastify is an unknown variable. What can I do?
 
@@ -94,7 +88,7 @@ Yes. You can run `yarn test` or `npm run test` after you installed the dependenc
 fastify.register(require('fastify-loader'), {
     paths: ['./api/**/*.js'], // A glob array
     inject: {
-        pi: 1.14 // pi is now available as var in each js file in ./api
+        pi: 3.14 // pi is now available as var in each js file in ./api
     }
 });
 ```
