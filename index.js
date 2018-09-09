@@ -1,4 +1,3 @@
-const fp = require('fastify-plugin')
 const {requireAndInject} = require('./inject');
 const debug = require('debug')('fastify-loader');
 
