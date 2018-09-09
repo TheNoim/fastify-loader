@@ -11,6 +11,7 @@
     "test": "jest test.js",
     "prepublish": "jest test.js"
   },
+  "keywords": ["fastify", "fastify-plugin", "routes", "loader"],
   "dependencies": {
     "fast-glob": "^2.2.2",
     "fastify-plugin": "^1.2.0",
