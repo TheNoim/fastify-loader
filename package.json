@@ -1,6 +1,6 @@
 {
   "name": "fastify-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An awesome fastify route loader",
   "main": "index.js",
   "repository": "https://github.com/TheNoim/fastify-loader.git",
