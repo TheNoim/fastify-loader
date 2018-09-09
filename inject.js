@@ -2,6 +2,7 @@ const fg = require('fast-glob');
 const path = require('path');
 const {NodeVM} = require('vm2');
 const fs = require('fs');
+const debug = require('debug')('inject');
 
 /**
  *
@@ -13,7 +14,10 @@ function inject(globs, toInject) {
         cwd: path.dirname(module.parent.filename)
     }).map(p => path.join(path.dirname(module.parent.filename), p));
 
+    debug(`Transformed Globs: ${paths}`);
+
     paths.map(p => {
+        debug(`Create VM for ${p}`);
         const vm = new NodeVM({
             sandbox: toInject,
             nesting: true,
@@ -24,7 +28,9 @@ function inject(globs, toInject) {
             wrapper: 'commonjs'
         });
         const code = fs.readFileSync(p, { encoding: 'utf8' });
+        debug(`Code for ${p}: ${code}`);
         vm.run(code, p);
+        debug(`Executed ${p}`);
     });
 }
 

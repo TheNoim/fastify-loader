@@ -18,6 +18,7 @@
     "loader"
   ],
   "dependencies": {
+    "debug": "^3.1.0",
     "fast-glob": "^2.2.2",
     "fastify-plugin": "^1.2.0",
     "nanoid": "^1.2.3",
