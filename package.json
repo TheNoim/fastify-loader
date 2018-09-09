@@ -1,6 +1,6 @@
 {
   "name": "fastify-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An awesome fastify route loader",
   "main": "inject.js",
   "repository": "https://github.com/TheNoim/fastify-loader.git",
@@ -11,7 +11,12 @@
     "test": "jest test.js",
     "prepublish": "jest test.js"
   },
-  "keywords": ["fastify", "fastify-plugin", "routes", "loader"],
+  "keywords": [
+    "fastify",
+    "fastify-plugin",
+    "routes",
+    "loader"
+  ],
   "dependencies": {
     "fast-glob": "^2.2.2",
     "fastify-plugin": "^1.2.0",
