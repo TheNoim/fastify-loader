@@ -2,7 +2,7 @@
   "name": "fastify-loader",
   "version": "1.0.2",
   "description": "An awesome fastify route loader",
-  "main": "inject.js",
+  "main": "index.js",
   "repository": "https://github.com/TheNoim/fastify-loader.git",
   "author": "Nils Bergmann <nilsbergmann@noim.io>",
   "license": "MIT",
