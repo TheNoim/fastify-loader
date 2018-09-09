@@ -3,6 +3,7 @@ const path = require('path');
 const {NodeVM} = require('vm2');
 const fs = require('fs');
 const debug = require('debug')('inject');
+const builtinModules = require('builtin-modules');
 
 /**
  *
@@ -25,7 +26,7 @@ function inject(globs, toInject, parent) {
             nesting: true,
             require: {
                 external: true,
-                builtin: true
+                builtin: builtinModules
             },
             wrapper: 'commonjs'
         });
