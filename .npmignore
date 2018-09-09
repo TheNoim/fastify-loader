@@ -1,0 +1,9 @@
+alternative/
+alternative.js
+example.js
+routes/
+node_modules/
+.gitignore
+.npmignore
+test.js
+.idea/

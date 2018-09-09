@@ -1,0 +1,25 @@
+{
+  "name": "fastify-loader",
+  "version": "1.0.0",
+  "description": "An awesome fastify route loader",
+  "main": "inject.js",
+  "repository": "https://github.com/TheNoim/fastify-loader.git",
+  "author": "Nils Bergmann <nilsbergmann@noim.io>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "jest test.js",
+    "prepublish": "jest test.js"
+  },
+  "dependencies": {
+    "fast-glob": "^2.2.2",
+    "fastify-plugin": "^1.2.0",
+    "nanoid": "^1.2.3"
+  },
+  "devDependencies": {
+    "fastify": "^1.11.2",
+    "jest": "^23.5.0",
+    "node-fetch": "^2.2.0",
+    "require-without-cache": "^0.0.6"
+  }
+}
