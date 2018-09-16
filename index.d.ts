@@ -19,7 +19,7 @@ declare let fastifyLoader: fastify.Plugin<HttpServer, HttpRequest, HttpResponse,
 
 declare module 'fastify' {
     export interface FastifyInstance<HttpServer = http.Server, HttpRequest = http.IncomingMessage, HttpResponse = http.ServerResponse> {
-        register<T extends RegisterOptions<HttpServer, HttpRequest, HttpResponse>>(plugin: Plugin<HttpServer, HttpRequest, HttpResponse, T>, opts?: FastifyLoaderOptions): FastifyInstance<HttpServer, HttpRequest, HttpResponse>
+        register<T extends RegisterOptions<HttpServer, HttpRequest, HttpResponse>>(plugin: Plugin<HttpServer, HttpRequest, HttpResponse, T>, opts?: FastifyLoaderOptions | T): FastifyInstance<HttpServer, HttpRequest, HttpResponse>
     }
 }
 
