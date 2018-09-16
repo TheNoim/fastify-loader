@@ -72,6 +72,21 @@ If your IDE supports [JSDoc](http://usejsdoc.org/), you can append this to the f
 +  * @var {fastify.FastifyInstance} fastify
 +  */
 
+// noinspection ES6ModulesDependencies
+fastify.get('/api/hello', async () => {
+    // Complex code here
+    return { hello: true };
+})
+```
+
+Or better if your IDE supports typescript typings, because then you can do this:
+
+```typescript
+// File: ./api/hello.js
++ /// <reference types="fastify"/>
++ /// <reference types="fastify-loader"/>
+
+// noinspection ES6ModulesDependencies
 fastify.get('/api/hello', async () => {
     // Complex code here
     return { hello: true };
