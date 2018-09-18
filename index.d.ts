@@ -1,4 +1,5 @@
-/// <reference path="node_modules/fastify/fastify.d.ts" />
+/// <reference types="fastify" />
+/// <reference path="global.d.ts" />
 
 import * as fastify from 'fastify';
 import * as http from "http";
@@ -12,7 +13,7 @@ declare interface HttpResponse extends http.ServerResponse {}
 declare interface FastifyLoaderOptions {
     name?: String
     inject?: [String, any]
-    paths?: [String] | String
+    paths?: String[] | String
 }
 
 declare let fastifyLoader: fastify.Plugin<HttpServer, HttpRequest, HttpResponse, FastifyLoaderOptions>;
