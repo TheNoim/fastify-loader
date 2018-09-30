@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "lts/carbon"
+  - "node"
+  - "lts/10"
+cache:
+  yarn: true
+script:
+  - yarn test
