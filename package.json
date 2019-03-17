@@ -26,7 +26,7 @@
     "vm2": "^3.6.3"
   },
   "devDependencies": {
-    "fastify": "^1.11.2",
+    "fastify": "^2.0.0",
     "jest": "^23.5.0",
     "node-fetch": "^2.2.0",
     "require-without-cache": "^0.0.6"
