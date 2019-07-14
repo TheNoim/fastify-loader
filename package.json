@@ -20,7 +20,7 @@
   "dependencies": {
     "builtin-modules": "^3.0.0",
     "debug": "^4.0.1",
-    "fast-glob": "^2.2.2",
+    "fast-glob": "^3.0.0",
     "fastify-plugin": "^1.2.0",
     "nanoid": "^2.0.0",
     "vm2": "^3.6.3"
