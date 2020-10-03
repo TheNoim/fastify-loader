@@ -18,17 +18,17 @@
     "loader"
   ],
   "dependencies": {
-    "builtin-modules": "^3.0.0",
-    "debug": "^4.0.1",
-    "fast-glob": "^3.0.0",
-    "fastify-plugin": "^1.2.0",
-    "nanoid": "^2.0.0",
-    "vm2": "^3.6.3"
+    "builtin-modules": "^3.1.0",
+    "debug": "^4.2.0",
+    "fast-glob": "^3.2.4",
+    "fastify-plugin": "^2.3.4",
+    "nanoid": "^3.1.12",
+    "vm2": "^3.9.2"
   },
   "devDependencies": {
-    "fastify": "^2.0.0",
-    "jest": "^23.5.0",
-    "node-fetch": "^2.2.0",
+    "fastify": "^3.5.0",
+    "jest": "^26.4.2",
+    "node-fetch": "^2.6.1",
     "require-without-cache": "^0.0.6"
   }
 }

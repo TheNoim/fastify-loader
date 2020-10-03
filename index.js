@@ -14,4 +14,4 @@ module.exports = fp(function (fastify, opts, next) {
         ...othersToInject
     }, module.parent.filename);
     next()
-}, { version: ">=1.0.0" });
+}, { version: ">=1.0.0", name: "fastifyLoader" });
